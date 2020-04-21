@@ -11,35 +11,31 @@
     <TextView
         android:id="@+id/HOTELAPP"
         android:layout_width="352dp"
-        android:layout_height="110dp"
+        android:layout_height="0dp"
         android:shadowColor="#202020"
-        android:shadowDx="50"
-        android:shadowDy="50"
         android:text="    HOTEL APP"
         android:textColor="#47BC13"
         android:textColorLink="#302445"
         android:textSize="50sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="370dp"
-        android:layout_height="498dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="160dp"
         android:alpha=".4"
         android:foregroundGravity="center"
         android:src="@drawable/itablE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toEndOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline"
@@ -49,36 +45,38 @@
         android:id="@+id/done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="180dp"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
-        android:layout_marginBottom="29dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginLeft="225dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="226dp"
+        android:layout_marginRight="226dp"
+        android:layout_marginBottom="111dp"
         android:background="@drawable/bgbutton"
         android:text="done"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/table_number" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/table_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginBottom="174dp"
         android:hint="TABLE NO."
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="155dp" />
-
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toEndOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:layout_marginTop="69dp"
         android:layout_marginBottom="182dp"
         android:text="ENTER"
@@ -86,15 +84,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="1" />
+        app:layout_constraintGuide_percent="0.1" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -113,14 +112,13 @@
         app:layout_constraintGuide_percent="0.05" />
 
 
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline8"
+        android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.95" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
