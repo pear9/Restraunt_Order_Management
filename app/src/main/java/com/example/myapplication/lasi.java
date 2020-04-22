@@ -27,10 +27,10 @@ public class lasi extends AppCompatActivity {
         getWindow().setLayout((int) (width * .7), (int) (height * .8));
 
 
-        BlueBerry = (SeekBar) findViewById(R.id.seek_blueberry);
-        Mango = (SeekBar) findViewById(R.id.seek_mango);
-        Numb_blueberry = (TextView) findViewById(R.id.no_blueberry);
-        Numb_mango = (TextView) findViewById(R.id.no_mango);
+        BlueBerry = findViewById(R.id.seek_blueberry);
+        Mango = findViewById(R.id.seek_mango);
+        Numb_blueberry = findViewById(R.id.no_blueberry);
+        Numb_mango = findViewById(R.id.no_mango);
 
         BlueBerry.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override

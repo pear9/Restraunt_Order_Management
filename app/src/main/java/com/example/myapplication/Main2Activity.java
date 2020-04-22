@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
         TextView tableid;
 
         tableid = findViewById(R.id.ordertableno);
-        tableid.setText("order for " + str1);
+        tableid.setText("order for table" + str1);
 
 
         Button drink = findViewById(R.id.drink_cat);

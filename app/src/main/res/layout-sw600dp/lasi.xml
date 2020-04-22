@@ -7,23 +7,6 @@
     android:background="#ffff">
 
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Mango Lassi"
-        android:textColor="#090808"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
-        app:layout_constraintEnd_toStartOf="@+id/guideline20"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/guideline21"
-        app:layout_constraintVertical_bias="1.0" />
-
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline18"
         android:layout_width="wrap_content"
@@ -93,10 +76,14 @@
     <SeekBar
         android:id="@+id/seek_vlueberry"
         style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="382dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:max="10"
-        android:progress="3" />
+        android:progress="0"
+        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+        tools:layout_editor_absoluteY="138dp" />
 
     <TextView
         android:id="@+id/textView2"
