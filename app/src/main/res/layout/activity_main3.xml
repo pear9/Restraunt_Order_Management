@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/intro_im"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="227dp"
+        android:layout_height="264dp"
         android:alpha=".4"
         android:background="@mipmap/background"
         app:layout_constraintBottom_toBottomOf="parent"

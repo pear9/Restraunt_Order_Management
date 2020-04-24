@@ -12,11 +12,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
 private String message;
         private EditText table;
@@ -25,47 +26,52 @@ private String message;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //---------linking buttons from xml to new variable----
-        ImageView table1=findViewById(R.id.imageView3);
-       table=findViewById(R.id.table_number);
-        TextView HOTELAPP=findViewById(R.id.HOTELAPP);
-        Button Done=findViewById(R.id.done);
+        ImageView table1= findViewById(R.id.imageView3);
+       table= findViewById(R.id.editText);
+        TextView HOTELAPP= findViewById(R.id.HOTELAPP);
+        Button Done= findViewById(R.id.done);
 
-        Done.setOnClickListener(this);
-        HOTELAPP.setOnClickListener(this);
 
         //--------animation
         Animation animation;
         animation = AnimationUtils.loadAnimation(this, R.anim.atg);
-                table1.startAnimation(animation);
-                HOTELAPP.startAnimation(animation);
+        table1.startAnimation(animation);
+        HOTELAPP.startAnimation(animation);
+
+
+        Done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               String name =table.getText().toString();
+               if(name.matches("")){
+                   Toast.makeText(MainActivity.this,"INPUT PLEASE",Toast.LENGTH_SHORT).show();
+                   return;
+               }
+                int i =Integer.parseInt(name);
+                if(i<21 & i>0){
+                    Intent menu=new Intent(MainActivity.this,menucat.class);
+                    menu.putExtra("tab1",name);
+                            startActivity(menu);
+                }
+                else
+                {
+                    Toast.makeText(MainActivity.this,"NO ANY TABLE",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        HOTELAPP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newadmin = new Intent(MainActivity.this, admin.class);
+                startActivity(newadmin);
+            }
+        });
+
+
 
 
 
         }
-//------to check which button clicked---
-    @Override
-    public void onClick(View view) {
 
-
-        switch (view.getId())
-        {
-            case R.id.done:
-            message=table.getText().toString();
-                Intent menu=new Intent(this,Main2Activity.class);
-                menu.putExtra("tab1",message);
-                startActivity(menu);
-                break;
-
-
-
-            case R.id.HOTELAPP:
-                    Intent newadmin=new Intent(this,admin.class);
-                    startActivity(newadmin);
-                    break;
-
-            default:
-
-        }
-    }
     }
 

@@ -57,16 +57,17 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline9"
-        app:layout_constraintStart_toEndOf="@+id/table_number"
+        app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
-        android:id="@+id/table_number"
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:layout_marginBottom="174dp"
         android:hint="TABLE NO."
+        android:text="1"
         android:textSize="36sp"
         android:inputType="number"
         android:maxLength="2"

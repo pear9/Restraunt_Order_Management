@@ -4,4 +4,22 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="order_of_table_no">order of table no.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="plain_lassi">Plain Lassi</string>
+    <string name="lassi">LASSI</string>
+    <string name="menu">Menu</string>
+    
+
+    <string-array name="menu">
+        <item>DRINKS</item>
+        <item>SALAD</item>
+        <item>SOUP</item>
+        <item>CURRY</item>
+        <item>CHICKEN</item>
+        <item>PIZZA</item>
+        <item>RICE</item>
+        <item>NAAN</item>
+    </string-array>
 </resources>

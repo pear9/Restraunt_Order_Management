@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#244681"
+        tools:context=".Main2Activity"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="93dp">
+
+
+        <TextView
+            android:id="@+id/ordertableno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order_of_table_no"
+            android:textSize="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/drink_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.529"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/order_table"
+            app:layout_constraintVertical_bias=".0" />
+
+        <TextView
+            android:id="@+id/order_table"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Foodmenu"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.073" />
+
+        <Button
+            android:id="@+id/drink_cat"
+            android:layout_width="477dp"
+            android:layout_height="106dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/drinks"
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="36sp"
+            android:text="               Drinks"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/salad_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/salad_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableStart="@drawable/sal_e"
+            android:drawableLeft="@drawable/sal_e"
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="36sp"
+            android:text="                  Salad"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/soup_cat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/drink_cat" />
+
+        <Button
+            android:id="@+id/soup_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/soup_e"
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="36sp"
+            android:text="             Soup"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/curry_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/salad_cat" />
+
+        <Button
+            android:id="@+id/curry_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/curry_e"
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="36sp"
+            android:text="           Curry"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/chicken_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/soup_cat" />
+
+        <Button
+            android:id="@+id/chicken_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/chicken_e"
+            android:focusable="auto"
+
+            android:gravity="left|center_vertical"
+            android:lineSpacingExtra="8sp"
+            android:paddingBottom="20dp"
+            android:text="    chicken"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/pizza_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/curry_cat" />
+
+        <Button
+            android:id="@+id/pizza_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/pizza_e"
+            android:gravity="left|center_vertical"
+
+            android:lineSpacingExtra="36sp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="         pizza"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/rice_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/chicken_cat" />
+
+        <Button
+            android:id="@+id/rice_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/rice_e"
+            android:gravity="left|center_vertical"
+
+            android:lineSpacingExtra="36sp"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="20dp"
+            android:text="             rice"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/nan_cat"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/pizza_cat" />
+
+        <Button
+            android:id="@+id/nan_cat"
+            android:layout_width="477dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/naan_e"
+            android:gravity="left|center_vertical"
+
+            android:lineSpacingExtra="36sp"
+            android:text="       Naan"
+            android:textColor="#C1B4B4"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintStart_toStartOf="@+id/guideline19"
+            app:layout_constraintTop_toBottomOf="@+id/rice_cat" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

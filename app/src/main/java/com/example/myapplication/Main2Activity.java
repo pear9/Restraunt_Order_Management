@@ -11,21 +11,18 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
     Bundle bin1;
+    TextView tableid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        Bundle bin1 = getIntent().getExtras();
+        bin1 = getIntent().getExtras();
         String str1;
-
-
         str1 = bin1.getString("tab1");
         check(str1);
-        TextView tableid;
-
         tableid = findViewById(R.id.ordertableno);
-        tableid.setText("order for table" + str1);
+
+
 
 
         Button drink = findViewById(R.id.drink_cat);
@@ -33,15 +30,16 @@ public class Main2Activity extends AppCompatActivity {
         drink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent drnk = new Intent(Main2Activity.this,drinks.class);
+                Intent drnk = new Intent(Main2Activity.this,tab.class);
                 startActivity(drnk);
             }
         });
 
 
     }
+    public  void check(String str) {
 
- public  void check(String str) {
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+    }
 
-     Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
- }}
+}
