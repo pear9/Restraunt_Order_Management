@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menucat"></activity>
+        <activity android:name=".fragment_holder"></activity>
+        <activity android:name=".menucat" />
         <activity android:name=".navigation_learning" />
         <activity android:name=".tab" />
         <activity android:name=".adminAdd" />

@@ -28,6 +28,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menucat);
+
         Resources r = getResources();
         Menu = r.getStringArray(R.array.menu);
         list = findViewById(R.id.listview);
@@ -56,7 +57,48 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         if(position==0){
             Intent drnk = new Intent(menucat.this,tab.class);
             startActivity(drnk);
+
+            if(position==1)
+            {
+                Intent intent=new Intent(menucat.this,fragment_holder.class);
+                intent.putExtra("tab2","salad");
+                startActivity(intent);
+            }
+
+
         }
+        if(position==2)
+        {
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","soup");
+            startActivity(intent);
+        }
+        if(position==4)
+        {
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","chicken");
+            startActivity(intent);
+        }
+        if(position==5)
+        {
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","pizza");
+            startActivity(intent);
+        }
+        if(position==6)
+        {
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","rice");
+            startActivity(intent);
+        }
+        if(position==7)
+        {
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","naan");
+            startActivity(intent);
+        }
+
+
     }
 }
 
@@ -70,7 +112,7 @@ Context context;
 int[] images;
 String[] title;
 
-    public listadapter(@NonNull Context c, String[] Menu,int imgs[]) {
+    public listadapter(@NonNull Context c, String[] Menu, int[] imgs) {
         super(c, R.layout.listappear,R.id.textView3,Menu);
         this.context=c;
         this.images=imgs;
@@ -78,16 +120,33 @@ String[] title;
 
     }
 
+    class holder{
+
+        public ImageView image;
+        TextView item;
+        holder(View v){
+            image = v.findViewById(R.id.imageView4);
+           item = v.findViewById(R.id.textView3);
+        }
+
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        View row = convertView;
+        holder hold=null;
+        if(row == null){
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row=inflater.inflate(R.layout.listappear,parent,false);
-        ImageView image = row.findViewById(R.id.imageView4);
-        TextView item = row.findViewById(R.id.textView3);
+        row=inflater.inflate(R.layout.listappear,parent,false);
+        hold=new holder(row);
+        row.setTag(hold);
+                }
 
-        image.setImageResource(images[position]);
-        item.setText(title[position]);
+        else hold = (holder) row.getTag();
+
+        hold.image.setImageResource(images[position]);
+        hold.item.setText(title[position]);
         return row;
     }
 }

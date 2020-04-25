@@ -10,7 +10,7 @@
     <string name="plain_lassi">Plain Lassi</string>
     <string name="lassi">LASSI</string>
     <string name="menu">Menu</string>
-    
+
 
     <string-array name="menu">
         <item>DRINKS</item>
@@ -22,4 +22,97 @@
         <item>RICE</item>
         <item>NAAN</item>
     </string-array>
+
+    <string-array name="harddrink">
+        <item>BeeR</item>
+        <item>Non-Alcohol BeeR</item>
+        <item>Kitano-Nishiki</item>
+        <item>Crystal Mint</item>
+        <item>Wine Glass</item>
+        <item>UME Sour</item>
+        <item>Lemon Sour</item>
+        <item>Kaku Highball</item>
+        <item>Sochu Glass</item>
+        <item>Sochu Bottle</item>
+        <item>Johnie Walker Black Glass</item>
+        <item>Johnie Walker Black Bottle</item>
+    </string-array>
+
+    <string-array name="tea">
+        <item>Himalayan Organic Coffee</item>
+        <item>Masala Herb Milk Tea</item>
+        <item>Ice cream</item>
+        <item>Vanilla Plain</item>
+        <item>Vanilla Choco</item>
+        <item>Vanilla Strawberry</item>
+    </string-array>
+
+    <string-array name="lassi">
+        <item>Plain Lassi</item>
+        <item>BlueBerry Lassi</item>
+        <item>Mango Lassi</item>
+        <item>StrawBerry Lassi</item>
+        <item>Kiwi Lassi</item>
+        <item>Masala Lassi</item>
+    </string-array>
+
+    <string-array name="soft_drinks">
+        <item>Ice Coffee</item>
+        <item>Oolong Tea</item>
+        <item>Yamabudo Juice</item>
+        <item>Yamabudo Soda</item>
+        <item>Coca-Cola</item>
+        <item>Melon Soda</item>
+        <item>Orange Juice</item>
+        <item>Calpis</item>
+    </string-array>
+    <string-array name="Naan">
+        <item>Plain Naan</item>
+        <item>Cheese Naan</item>
+        <item>Garlic Naan</item>
+        <item>Cheese Garlic Naan</item>
+        <item>Blue Cheese Naan</item>
+        <item>Dried Fruit Naan</item>
+    </string-array>
+    <string-array name="Pizza">
+        <item>Mix Pizza</item>
+        <item>Barbeque Chicken Pizza</item>
+        <item>Margherita Pizza</item>
+        <item>Basil and Spinach Pizza</item>
+        <item>Spice Sausage Pizza</item>
+    </string-array>
+    <string-array name="Chicken">
+        <item>Tandoori Chicken</item>
+        <item>Roast Pork</item>
+        <item>Fried Chicken(3P)</item>
+        <item>Fried Chicken(6P)</item>
+        <item>Tandoori Butabara</item>
+        <item>Chilli Chicken(3p)</item>
+        <item>Chilli Chicken(6p)</item>
+        <item>Garlic Chicken(3p)</item>
+        <item>Garlic Chicken(6P)</item>
+        <item>Spicy Bacon(1P)</item>
+        <item>Spicy Bacon(2P)</item>
+    </string-array>
+    <string-array name="Soup">
+        <item>Vegetable Soup Curry Set</item>
+        <item>Chicken Soup Curry Set</item>
+        <item>Pork Soup Curry Set</item>
+        <item>Seafood Soup Curry Set</item>
+        <item>Shrimp Soup Curry Set</item>
+    </string-array>
+    <string-array name="Salad">
+        <item>Mix Salad</item>
+        <item>Mini Salad</item>
+    </string-array>
+    <string-array name="Rice">
+        <item>Family Set</item>
+        <item>Earth Special Set</item>
+        <item>Nepali Set</item>
+        <item>Cheese Naan Set</item>
+        <item>Kids Curry set</item>
+        <item>Rice</item>
+    </string-array>
+
+
 </resources>

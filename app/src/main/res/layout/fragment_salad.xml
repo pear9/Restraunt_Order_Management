@@ -3,14 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".tea"
+    tools:context=".salad"
     android:background="@color/colorPrimary">
 
-        <ListView
-            android:id="@+id/list_tea"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
+    <ListView
+        android:id="@+id/salad_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

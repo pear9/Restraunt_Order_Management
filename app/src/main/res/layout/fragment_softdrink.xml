@@ -3,12 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".softdrink">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".softdrink"
+    android:background="@color/colorPrimary"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/softdrinkbe"
+        android:alpha=".5">
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/sftdrnklist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:alpha="1"/>
 </FrameLayout>
