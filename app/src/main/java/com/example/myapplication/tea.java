@@ -35,8 +35,8 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_tea, container, false);
-        list_tea=v.findViewById(R.id.list_tea);
+        View v=inflater.inflate(R.layout.fragment_lassi, container, false);
+        list_tea=v.findViewById(R.id.lassi_list);
         tealist=getResources().getStringArray(R.array.tea);
         teaadapter tadapter = new teaadapter(getActivity(),tealist);
         list_tea.setAdapter(tadapter);
@@ -48,8 +48,6 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(position==0) {
             String s = tealist[position];
-            Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
-
             dialogue(s);
         }
         if(position==1){
@@ -76,14 +74,14 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
 
 
 
-    private void dialogue(String s) {
+    void dialogue(String s) {
     final AlertDialog.Builder alert =new AlertDialog.Builder(getActivity());
     View mview =getLayoutInflater().inflate(R.layout.alertdialogue,null);
     TextView item_name=mview.findViewById(R.id.alertTitle);
     item_name.setText(s);
     Button okbtn=mview.findViewById(R.id.okbtn);
         Button cancelbtn=mview.findViewById(R.id.cancelbtn);
-        EditText text=mview.findViewById(R.id.quantity);
+       final EditText text=mview.findViewById(R.id.quantity);
 
         item_name.setText(s);
         alert.setView(mview);
@@ -94,7 +92,14 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
             @Override
             public void onClick(View v) {
 
+                String s1=text.getText().toString();
+                if (s1.isEmpty()){
+                    Toast.makeText(getActivity(),"It is empty" ,Toast.LENGTH_SHORT).show();
 
+                }else {
+                    int numberlassi = Integer.parseInt(s1);
+                    alertDialog.dismiss();
+                }
 
             }
         });

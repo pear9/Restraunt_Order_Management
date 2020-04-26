@@ -58,13 +58,12 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
             Intent drnk = new Intent(menucat.this,tab.class);
             startActivity(drnk);
 
-            if(position==1)
-            {
-                Intent intent=new Intent(menucat.this,fragment_holder.class);
-                intent.putExtra("tab2","salad");
-                startActivity(intent);
-            }
 
+        }
+        if(position==1){
+            Intent intent=new Intent(menucat.this,fragment_holder.class);
+            intent.putExtra("tab2","salad");
+            startActivity(intent);
 
         }
         if(position==2)

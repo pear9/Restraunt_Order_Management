@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.os.Bundle;
 import android.app.Fragment;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,14 +20,18 @@ public class fragment_holder extends AppCompatActivity {
         Bundle bin1 = getIntent().getExtras();
         String str1;
         str1 = bin1.getString("tab2");
-        menushow(str1);
+        TextView title=findViewById(R.id.title);
+        menushow(str1 ,title);
+
 
 
     }
 
 
-    public void menushow(String s) {
+    public void menushow(String s, TextView title) {
+        title.setText(s);
         switch (s) {
+
             case "salad":
                 salad sal = new salad();
                 FragmentManager fm = getSupportFragmentManager();
@@ -55,6 +61,13 @@ public class fragment_holder extends AppCompatActivity {
                 ft3.add(R.id.fragmentmenu, piz, null);
                 ft3.commit();
                 break;
+            case "rice":
+                riceset ric =new riceset();
+                FragmentManager fm5=getSupportFragmentManager();
+                FragmentTransaction ft5=fm5.beginTransaction();
+                ft5.add(R.id.fragmentmenu,ric,null);
+                ft5.commit();
+                break;
 
             case "naan":
                 Naan nan = new Naan();
@@ -63,6 +76,8 @@ public class fragment_holder extends AppCompatActivity {
                 ft4.add(R.id.fragmentmenu, nan, null);
                 ft4.commit();
                 break;
+
+
             default:
 
 

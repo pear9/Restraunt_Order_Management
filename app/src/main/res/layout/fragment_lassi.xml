@@ -6,11 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".softdrink"
     android:background="@color/colorPrimary">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/lassibg"
-        android:alpha=".5"/>
+  
 
     <ListView
         android:id="@+id/lassi_list"
