@@ -24,8 +24,8 @@
     </string-array>
 
     <string-array name="harddrink">
-        <item>BeeR</item>
-        <item>Non-Alcohol BeeR</item>
+        <item>Beer</item>
+        <item>Non-Alcohol Beer</item>
         <item>Kitano-Nishiki</item>
         <item>Crystal Mint</item>
         <item>Wine Glass</item>
@@ -104,6 +104,8 @@
     <string-array name="Salad">
         <item>Mix Salad</item>
         <item>Mini Salad</item>
+        <item>Butter Corn</item>
+        <item>Eda Mame</item>
     </string-array>
     <string-array name="Rice">
         <item>Family Set</item>
@@ -112,6 +114,38 @@
         <item>Cheese Naan Set</item>
         <item>Kids Curry set</item>
         <item>Rice</item>
+    </string-array>
+    <string-array name="veg_curry">
+        <item>Kids Curry set</item>
+        <item>Butter Masala Set</item>
+        <item>Thailand Green Curry Set(Chicken)</item>
+        <item>Thailand Green Curry Set(Chicken))</item>
+        <item>Vegetable Curry Set</item>
+    </string-array>
+    <string-array name="non_veg_ccurry">
+        <item>Chicken Cheese Curry Set</item>
+        <item>Chicken Coconut Curry Set</item>
+        <item>Chicken Curry Set</item>
+        <item>Mame Chicken Curry Set</item>
+        <item>Horenso Chicken Curry Set</item>
+        <item>Shahi Chicken Curry Set</item>
+    </string-array>
+
+    <string-array name="non_veg_bcurry">
+        <item>Mame Beef Curry Set</item>
+        <item>Beef Curry Set</item>
+        <item>Horenso Beef Curry Set</item>
+    </string-array>
+    <string-array name="non_veg_pcurry">
+        <item>Pork Curry Set</item>
+        <item>Mame Pork Curry Set</item>
+        <item>Horenso Pork Curry Set</item>
+    </string-array>
+    <string-array name="non_veg_ocurry">
+        <item>Mame Curry Set</item>
+        <item>Seafood Curry Set</item>
+        <item>Shrimp Masala Set</item>
+        <item>World Spicy No.1 Curry Set</item>
     </string-array>
 
 

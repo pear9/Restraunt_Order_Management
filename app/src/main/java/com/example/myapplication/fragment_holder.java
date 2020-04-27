@@ -53,6 +53,14 @@ public class fragment_holder extends AppCompatActivity {
                 ft2.add(R.id.fragmentmenu, chick, null);
                 ft2.commit();
                 break;
+            case "curry":
+                curry cur = new curry();
+                FragmentManager fm6 = getSupportFragmentManager();
+                FragmentTransaction ft6 = fm6.beginTransaction();
+                ft6.add(R.id.fragmentmenu, cur, null);
+                ft6.commit();
+                break;
+
 
             case "pizza":
                 Pizza piz = new Pizza();
