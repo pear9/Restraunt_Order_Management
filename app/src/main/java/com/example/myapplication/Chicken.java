@@ -43,48 +43,59 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(position==0) {
+            int c1=1;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s,c1);
         }
         if(position==1){
+            int c2=2;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c2);
         }
         if(position==2){
+            int c3=2;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c3);
         }
         if(position==3){
+            int c4=4;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c4);
         }
         if(position==4){
+            int c5=5;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c5);
         }
         if(position==5){
+            int c6=6;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c6);
         }
         if(position==6){
+            int c7=7;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c7);
         }
         if(position==7){
+            int c8=8;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c8);
         }
         if(position==8){
+            int c9=9;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c9);
         }
         if(position==9){
+            int c10=10;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c10);
         }
         if(position==10){
+            int c11=11;
             String s = listchicken[position];
-            lassidialogue(s);
+            lassidialogue(s, c11);
         }
 
 
@@ -93,7 +104,7 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
 
 
 
-    private void lassidialogue(String s) {
+    private void lassidialogue(String s, final int c1) {
         final AlertDialog.Builder alert =new AlertDialog.Builder(getActivity());
         View mview =getLayoutInflater().inflate(R.layout.alertdialogue,null);
         TextView item_name=mview.findViewById(R.id.alertTitle);
@@ -105,13 +116,15 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
         alert.setView(mview);
         final AlertDialog alertDialog =alert.create();
         alertDialog.setCanceledOnTouchOutside(false);
+        final int itemcode=c1;
 
         okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String s1=text.getText().toString();
                 int numberlassi =Integer.parseInt(s1);
-                alertDialog.dismiss();
+                Datacollector chicken=new Datacollector();
+                              alertDialog.dismiss();
 
 
             }

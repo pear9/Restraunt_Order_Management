@@ -35,12 +35,7 @@ public class curry extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_curry, container, false);
-
-
-
-
-
-            ExpandableListView expandableListView;
+        ExpandableListView expandableListView;
             ExpandableListAdapter expandableListAdapter;
             final List<String>expandableitems;
             final HashMap<String, List<String>> expandableListDetail;
