@@ -12,11 +12,15 @@ import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 public class tab extends AppCompatActivity {
+    Bundle bin2;
+    String str2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab);
+        bin2 = getIntent().getExtras();
+        str2 = bin2.getString("tab1");
 
         TabLayout tabLayout=findViewById(R.id.tabLayout);
         TabItem tablassi=findViewById(R.id.lassi);
@@ -24,6 +28,7 @@ public class tab extends AppCompatActivity {
         TabItem tabharddrink=findViewById(R.id.harddrink);
         TabItem tabtea=findViewById(R.id.tea);
         final ViewPager viewPager =findViewById(R.id.viewpager);
+
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 

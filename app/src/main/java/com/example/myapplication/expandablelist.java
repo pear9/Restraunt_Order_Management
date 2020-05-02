@@ -43,7 +43,7 @@ public class expandablelist extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.child, null);
         }
-        TextView expandedListTextView = (TextView) convertView
+        TextView expandedListTextView = convertView
                 .findViewById(R.id.itemsc);
         expandedListTextView.setText(expandedListText);
         return convertView;
@@ -79,7 +79,7 @@ public class expandablelist extends BaseExpandableListAdapter {
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.listfooditem, null);
         }
-        TextView itemsTextView = (TextView) convertView
+        TextView itemsTextView = convertView
                 .findViewById(R.id.items);
         itemsTextView.setTypeface(null, Typeface.BOLD);
         itemsTextView.setText(items);

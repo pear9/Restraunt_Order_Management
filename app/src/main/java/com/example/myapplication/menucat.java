@@ -21,6 +21,7 @@ import android.widget.Toast;
 public class menucat extends AppCompatActivity implements AdapterView.OnItemClickListener {
     Bundle bin1;
     ListView list;
+    public String str1;
     String[] Menu;
     int[] images = {R.drawable.drinks, R.drawable.sal_e, R.drawable.soup_e, R.drawable.curry_e, R.drawable.chicken_e, R.drawable.pizza_e, R.drawable.rice_e, R.drawable.naan_e};
 
@@ -38,11 +39,13 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         list.setOnItemClickListener(this);
 
 
-        bin1 = getIntent().getExtras();
-        String str1;
-        str1 = bin1.getString("tab1");
-        check(str1);
-        order_no.setText("Order of table"+str1);
+//        bin1 = getIntent().getExtras();
+//        str1 = bin1.getString("tab1");
+//        check(str1);
+        MainActivity test =new MainActivity();
+        String test1=test.getName();
+        order_no.setText("Order of table "+test1);
+        check(test1);
 
 
     }
@@ -56,6 +59,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
 
         if(position==0){
             Intent drnk = new Intent(menucat.this,tab.class);
+            drnk.putExtra("tab1",str1);
             startActivity(drnk);
 
 
@@ -63,6 +67,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         if(position==1){
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","salad");
+
             startActivity(intent);
 
         }
@@ -70,12 +75,14 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","soup");
+
             startActivity(intent);
         }
         if(position==3)
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","curry");
+
             startActivity(intent);
         }
 
@@ -83,12 +90,14 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","chicken");
+
             startActivity(intent);
         }
         if(position==5)
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","pizza");
+
             startActivity(intent);
         }
         if(position==6)
@@ -101,6 +110,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
             intent.putExtra("tab2","naan");
+
             startActivity(intent);
         }
 

@@ -11,11 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -55,7 +50,7 @@ public class admin extends AppCompatActivity {
 
 
                     if("anis".equals(name) & ("985509".equals(passkey))){
-                        Intent admin_add = new Intent(admin.this,adminAdd.class);
+                        Intent admin_add = new Intent(admin.this,Main5Activity.class);
                         Toast.makeText(admin.this,"o yeah",Toast.LENGTH_SHORT).show();
                         startActivity(admin_add);
                     }

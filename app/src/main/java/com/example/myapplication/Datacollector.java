@@ -1,42 +1,68 @@
 package com.example.myapplication;
 
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Datacollector {
-    private int tableno;
-    private int quantity;
-    private  int itemcode;
+    public  void resolver() throws IOException
+    {
+        // PrintWriter object for output.txt
+        PrintWriter pw = new PrintWriter("output.txt");
 
-    public Datacollector() {
+        // BufferedReader object for input.txt
+        BufferedReader br1 = new BufferedReader(new FileReader("table.txt"));
+
+        String line1 = br1.readLine();
+
+        // loop for each line of input.txt
+        while(line1 != null)
+        {
+            boolean flag = false;
+
+            // BufferedReader object for output.txt
+            BufferedReader br2 = new BufferedReader(new FileReader("output.txt"));
+
+            String line2 = br2.readLine();
+
+            // loop for each line of output.txt
+            while(line2 != null)
+            {
+
+                if(line1.equals(line2))
+                {
+                    flag = true;
+                    break;
+                }
+
+                line2 = br2.readLine();
+
+            }
+
+            // if flag = false
+            // write line of input.txt to output.txt
+            if(!flag){
+                pw.println(line1);
+
+                // flushing is important here
+                pw.flush();
+            }
+
+            line1 = br1.readLine();
+
+        }
+
+        // closing resources
+        br1.close();
+        pw.close();
+
+        System.out.println("File operation performed successfully");
     }
 
-    public Datacollector(int tableno, int quantity, int itemcode) {
-        this.tableno = tableno;
-        this.quantity = quantity;
-        this.itemcode = itemcode;
-    }
 
-
-    public int getTableno() {
-        return tableno;
-    }
-
-    public void setTableno(int tableno) {
-        this.tableno = tableno;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getItemcode() {
-        return itemcode;
-    }
-
-    public void setItemcode(int itemcode) {
-        this.itemcode = itemcode;
-    }
 
 }
