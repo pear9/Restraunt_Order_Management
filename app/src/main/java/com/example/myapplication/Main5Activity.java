@@ -55,16 +55,21 @@ public class Main5Activity extends AppCompatActivity {
         Log.d("oo", "iii");
         message = findViewById(R.id.message);
         messenger1 = findViewById(R.id.messenger);
+        final Button messenger3=findViewById(R.id.messenger3);
         messenger2=findViewById(R.id.messenger2);
         messenger1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n=new Intent(Main5Activity.this,choice.class);
-                startActivity(n);
-            }
-        });
+                Intent nr=new Intent(Main5Activity.this,choice.class);
+                startActivity(nr);
 
-    }
+
+                    }
+                });
+            }
+
+
+
 
 
 

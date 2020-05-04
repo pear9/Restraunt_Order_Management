@@ -7,25 +7,25 @@
     tools:context=".choice">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/send"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AT IN"
+        android:onClick="load"
+        android:background="@color/colorPrimary"
+        android:text="button click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/urltext"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OUT"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginTop="260dp"
+        android:text="http://192.168.1.8/test/new_save.php"
+        app:layout_constraintBottom_toTopOf="@+id/send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

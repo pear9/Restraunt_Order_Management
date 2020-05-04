@@ -15,22 +15,33 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
+
         <TextView
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Menu"
             android:textSize="24sp"
             android:textAlignment="center"
-            android:layout_gravity="center"
-            ></TextView>
+            android:gravity="center"
+
+            />
+
+
+
         <TextView
             android:id="@+id/order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Order"
-            android:textSize="24sp"
             android:layout_gravity="center"
-            android:textAlignment="center"/>
+            android:text="Order"
+            android:textAlignment="center"
+            android:textColor="#100F0F"
+            android:textSize="24sp" />
+
+
+
     </LinearLayout>
 
     <ListView
@@ -42,4 +53,5 @@
         tools:layout_editor_absoluteY="46dp">
 
     </ListView>
+
 </RelativeLayout>

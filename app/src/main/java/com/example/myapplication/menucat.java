@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 public class menucat extends AppCompatActivity implements AdapterView.OnItemClickListener {
     Bundle bin1;
     ListView list;
+    Button done;
     public String str1;
     String[] Menu;
     int[] images = {R.drawable.drinks, R.drawable.sal_e, R.drawable.soup_e, R.drawable.curry_e, R.drawable.chicken_e, R.drawable.pizza_e, R.drawable.rice_e, R.drawable.naan_e};
@@ -29,7 +31,6 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menucat);
-
         Resources r = getResources();
         Menu = r.getStringArray(R.array.menu);
         list = findViewById(R.id.listview);
@@ -37,6 +38,15 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         listadapter adapter = new listadapter(this, Menu, images);
         list.setAdapter(adapter);
         list.setOnItemClickListener(this);
+        done=findViewById(R.id.Done);
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ok =new Intent(menucat.this,choice.class);
+                startActivity(ok);
+            }
+        });
+
 
 
 //        bin1 = getIntent().getExtras();
@@ -45,8 +55,8 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         MainActivity test =new MainActivity();
         String test1=test.getName();
         order_no.setText("Order of table "+test1);
-        check(test1);
 
+        check(test1);
 
     }
     public  void check(String str) {
@@ -116,6 +126,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
 
 
     }
+
 }
 
 
