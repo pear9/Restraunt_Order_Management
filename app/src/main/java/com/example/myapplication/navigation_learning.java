@@ -112,7 +112,7 @@ public class navigation_learning extends AppCompatActivity  {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-
+    Toast.makeText(navigation_learning.this,"error",Toast.LENGTH_SHORT).show();
 
             }
         }){

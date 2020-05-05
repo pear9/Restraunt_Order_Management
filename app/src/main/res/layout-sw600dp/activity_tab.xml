@@ -11,13 +11,14 @@
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewpager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.041"
+        app:layout_constraintVertical_bias="0.38"
         app:tabSelectedTextColor="#fff"
         app:tabTextColor="#000">
 
@@ -25,7 +26,7 @@
             android:id="@+id/lassi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/lassi" />
+            android:text="LASSI" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/softdrink"
