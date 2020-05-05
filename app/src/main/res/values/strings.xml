@@ -19,8 +19,9 @@
         <item>CURRY</item>
         <item>CHICKEN</item>
         <item>PIZZA</item>
-        <item>RICE SET</item>
         <item>NAAN</item>
+        <item>RICE SET</item>
+
     </string-array>
 
     <string-array name="harddrink">

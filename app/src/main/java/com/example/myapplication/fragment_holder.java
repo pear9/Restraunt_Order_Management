@@ -62,6 +62,13 @@ public class fragment_holder extends AppCompatActivity {
                 break;
 
 
+            case "naan":
+                Naan nan = new Naan();
+                FragmentManager fm4 = getSupportFragmentManager();
+                FragmentTransaction ft4 = fm4.beginTransaction();
+                ft4.add(R.id.fragmentmenu, nan, null);
+                ft4.commit();
+                break;
             case "pizza":
                 Pizza piz = new Pizza();
                 FragmentManager fm3 = getSupportFragmentManager();
@@ -77,13 +84,6 @@ public class fragment_holder extends AppCompatActivity {
                 ft5.commit();
                 break;
 
-            case "naan":
-                Naan nan = new Naan();
-                FragmentManager fm4 = getSupportFragmentManager();
-                FragmentTransaction ft4 = fm4.beginTransaction();
-                ft4.add(R.id.fragmentmenu, nan, null);
-                ft4.commit();
-                break;
 
 
             default:

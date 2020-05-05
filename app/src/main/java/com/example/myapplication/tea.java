@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -60,33 +59,33 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if(position==0) {
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s, position);
         }
         if(position==1){
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s, position);
         }
         if(position==2){
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s, position);
         }
         if(position==3){
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s, position);
         }
         if(position==4){
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s,position);
         }
         if(position==5){
             String s = tealist[position];
-            dialogue(s);
+            dialogue(s, position);
         }
         }
 
 
 
-    void dialogue(final String s) {
+    void dialogue(final String s, int position) {
     final AlertDialog.Builder alert =new AlertDialog.Builder(getActivity());
     View mview =getLayoutInflater().inflate(R.layout.alertdialogue,null);
     TextView item_name=mview.findViewById(R.id.alertTitle);
@@ -94,12 +93,11 @@ public class tea extends Fragment implements AdapterView.OnItemClickListener{
     Button okbtn=mview.findViewById(R.id.okbtn);
         Button cancelbtn=mview.findViewById(R.id.cancelbtn);
        final EditText text=mview.findViewById(R.id.quantity);
-
         item_name.setText(s);
         alert.setView(mview);
         final AlertDialog alertDialog =alert.create();
         alertDialog.setCanceledOnTouchOutside(false);
-
+        itemcode=position+itemno;
         okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

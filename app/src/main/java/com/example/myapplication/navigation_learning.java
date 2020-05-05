@@ -2,12 +2,24 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.VoiceInteractor;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.kosalgeek.genasync12.AsyncResponse;
 import com.kosalgeek.genasync12.EachExceptionsHandler;
 import com.kosalgeek.genasync12.PostResponseAsyncTask;
@@ -22,86 +34,95 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.util.HashMap;
+import java.util.Map;
 
-public class navigation_learning extends AppCompatActivity implements AsyncResponse {
+import static com.android.volley.Request.*;
 
-
+public class navigation_learning extends AppCompatActivity  {
+        private String encoded,image_name;
+        File file;
+    TextView finalorder;
+    StringBuilder sb;
+    String st;
+    MainActivity test =new MainActivity();
+    String test1=test.getName();
+    String file_s="table"+test1+".txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_learning);
-        Button send=findViewById(R.id.send);
+        Button send=findViewById(R.id.button);
+        finalorder=findViewById(R.id.final_orders);
+
+
+        try{
+            FileInputStream fis =null;
+            fis =openFileInput(file_s);
+            InputStreamReader isr =new InputStreamReader(fis);
+            BufferedReader br =new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+
+            String text;
+            while((text=br.readLine())!=null){
+                sb.append(text).append("\n");
+            }
+            st =sb.toString();
+            finalorder.setText(sb.toString());
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
 
     }
-        public void load(View v){
-            FileInputStream fis =null;
-            try{
-                fis =openFileInput("table12.txt");
-                InputStreamReader isr =new InputStreamReader(fis);
-                BufferedReader br =new BufferedReader(isr);
-                StringBuilder sb = new StringBuilder();
-                String text;
-                while((text=br.readLine())!=null){
-                    sb.append(text).append("\n");
-                }
-                String st =sb.toString();
-                HashMap<String,String>postData=new HashMap<String, String>();
-                postData.put("image",st);
+        public void load(View v) {
 
-                PostResponseAsyncTask task =new PostResponseAsyncTask(navigation_learning.this, postData, new AsyncResponse() {
-                    @Override
-                    public void processFinish(String s) {
 
-                    }
-                });
-                task.execute("http://192.168.1.8/test/new_save.php");
-                task.setEachExceptionsHandler(new EachExceptionsHandler() {
-                    @Override
-                    public void handleIOException(IOException e) {
-                        Toast.makeText(navigation_learning.this,"cannot server",Toast.LENGTH_SHORT).show();
-                    }
+            new Encode_image().execute();
+        }
 
-                    @Override
-                    public void handleMalformedURLException(MalformedURLException e) {
-                        Toast.makeText(navigation_learning.this,"url error",Toast.LENGTH_SHORT).show();
-                    }
+    private class Encode_image extends AsyncTask<Void,Void,Void> {
 
-                    @Override
-                    public void handleProtocolException(ProtocolException e) {
-                        Toast.makeText(navigation_learning.this,"protocol server",Toast.LENGTH_SHORT).show();
-                    }
 
-                    @Override
-                    public void handleUnsupportedEncodingException(UnsupportedEncodingException e) {
-                        Toast.makeText(navigation_learning.this,"encoding server",Toast.LENGTH_SHORT).show();
-                    }
-                });
+        @Override
+        protected Void doInBackground(Void... voids) {
+            encoded=Base64.encodeToString(st.getBytes(),0);
 
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            makeRequest();
+        }
+    }
+
+    private void makeRequest() {
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        StringRequest request =new StringRequest(Method.POST,"http://192.168.1.8/save3.php",
+        new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
             }
-            finally {
-                if(fis!=null){
-                    try {
-                        fis.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
 
-    @Override
-    public void processFinish(String s) {
-        if(s.contains("upload success")){
-            Toast.makeText(navigation_learning.this,"Yahoo",Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(navigation_learning.this,"thukka",Toast.LENGTH_SHORT).show();
-        }
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+               HashMap<String,String> map =new HashMap<>();
+               map.put("text",encoded);
+               map.put("image_name",file_s);
+               return map;
+            }
+        } ;
+        requestQueue.add(request);
     }
 }

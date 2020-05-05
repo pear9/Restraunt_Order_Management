@@ -19,6 +19,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 public class menucat extends AppCompatActivity implements AdapterView.OnItemClickListener {
     Bundle bin1;
     ListView list;
@@ -26,7 +35,12 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     public String str1;
     String[] Menu;
     int[] images = {R.drawable.drinks, R.drawable.sal_e, R.drawable.soup_e, R.drawable.curry_e, R.drawable.chicken_e, R.drawable.pizza_e, R.drawable.rice_e, R.drawable.naan_e};
-
+    MainActivity test =new MainActivity();
+    String test1=test.getName();
+    int number1 =Integer.parseInt(test1);
+    String file34="table"+number1+".txt";
+    String file43 ="output.txt";
+    String file12=file34;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,21 +53,14 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         list.setAdapter(adapter);
         list.setOnItemClickListener(this);
         done=findViewById(R.id.Done);
-        done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ok =new Intent(menucat.this,choice.class);
-                startActivity(ok);
-            }
-        });
+
 
 
 
 //        bin1 = getIntent().getExtras();
 //        str1 = bin1.getString("tab1");
 //        check(str1);
-        MainActivity test =new MainActivity();
-        String test1=test.getName();
+
         order_no.setText("Order of table "+test1);
 
         check(test1);
@@ -61,7 +68,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     }
     public  void check(String str) {
 
-        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"table "+str, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -113,19 +120,128 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         if(position==6)
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
-            intent.putExtra("tab2","rice");
+            intent.putExtra("tab2","naan");
             startActivity(intent);
         }
         if(position==7)
         {
             Intent intent=new Intent(menucat.this,fragment_holder.class);
-            intent.putExtra("tab2","naan");
+            intent.putExtra("tab2","rice");
 
             startActivity(intent);
         }
 
 
     }
+    public void sort(View v) throws IOException {
+
+
+        ////reading from table.txt------///
+        FileInputStream fis2 = null;
+        fis2 = openFileInput(file34);
+        InputStreamReader fir2 = new InputStreamReader(fis2);
+        BufferedReader bir2 = new BufferedReader(fir2);
+
+
+        FileOutputStream fos1 = null;
+        fos1 = openFileOutput(file43, MODE_PRIVATE);
+
+
+        String ch = "";
+
+
+        List<String> tmp = new ArrayList<String>();
+
+        while (ch != null) {
+            ch = bir2.readLine();
+            tmp.add(ch);
+
+        }
+
+        for (int i = tmp.size() - 2; i >= 0; i--) {
+            fos1.write(tmp.get(i).getBytes());
+            fos1.write("\n".getBytes());
+        }
+        fos1.flush();
+        fos1.close();
+        bir2.close();
+        ////closed--------------///
+
+        //--writing in table.txt----////
+
+        //{ opening table.txt in private
+        FileOutputStream fos2=null;
+        fos2 = openFileOutput(file12, MODE_PRIVATE);
+
+///}
+///opening fle output-------/////
+        FileInputStream fis3 = null;
+        fis3 = openFileInput(file43);
+        InputStreamReader fir3 = new InputStreamReader(fis3);
+        BufferedReader bir3 = new BufferedReader(fir3);
+
+        String line1 = null;
+        line1 = bir3.readLine();
+
+
+
+        while(line1 != null)
+        {
+            boolean flag = false;
+            FileInputStream fis4 = null;
+            fis4 = openFileInput(file12);
+            InputStreamReader fir4 = new InputStreamReader(fis4);
+            BufferedReader bir4 = new BufferedReader(fir4);
+
+            String line2 = null;
+            line2 = bir4.readLine();
+            // loop for each line of output.txt
+            while(line2 != null)
+            {
+
+                String line3= line1.substring(0,line1.length()-3);
+                String line4= line2.substring(0,line2.length()-3);
+
+
+                if(line3.equals(line4))
+                {
+                    flag = true;
+                    break;
+                }
+                line2 = bir4.readLine();
+
+            }
+
+            // if flag = false
+            // write line of table.txt to output.txt
+            if(!flag){
+                String line5=line1.substring(line1.length()-3,line1.length());
+                if(!(line5.equals("000"))){
+                    fos2.write(line1.getBytes());
+                    fos2.write("\n".getBytes());
+                    // flushing is important here
+                    fos2.flush();
+                }}
+
+
+            line1 = bir3.readLine();
+
+
+        }
+
+        // closing resources
+
+        bir3.close();
+
+        fos2.close();
+
+
+        Intent nav=new Intent(menucat.this,navigation_learning.class);
+        startActivity(nav);
+    }
+
+
+
 
 }
 
@@ -176,4 +292,9 @@ String[] title;
         hold.item.setText(title[position]);
         return row;
     }
-}
+
+
+
+
+
+    }

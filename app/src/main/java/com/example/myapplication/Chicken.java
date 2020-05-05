@@ -35,14 +35,14 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
     public Chicken() {
         // Required empty public constructor
     }
-    ListView chicken_list;
-    MainActivity chickentble=new MainActivity();
+    private ListView chicken_list;
+    private MainActivity chickentble=new MainActivity();
     private String str4=chickentble.getName();
     private int itemno=41;
 
-    String[]listchicken;
-    String itemwrite;
-    int itemcode;
+    private String[]listchicken;
+    private String itemwrite;
+    private int itemcode;
 
 
     @Override
@@ -83,7 +83,7 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
             String s = listchicken[position];
             lassidialogue(s,position);
         }
-        if(position==25){
+        if(position==5){
             String s = listchicken[position];
             lassidialogue(s, position);
         }
@@ -108,6 +108,11 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
             lassidialogue(s,position);
         }
         if(position==10){
+
+            String s = listchicken[position];
+            lassidialogue(s,position);
+        }
+        if(position==11){
 
             String s = listchicken[position];
             lassidialogue(s,position);

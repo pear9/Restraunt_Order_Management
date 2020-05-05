@@ -66,7 +66,7 @@ private String message;
                    return;
                }
                int i =Integer.parseInt(name);
-                if(i<21 & i>0 ){
+                if(i<50 & i>0 ){
 ///-----------------writing to file named table----------------------//
 
                     try {

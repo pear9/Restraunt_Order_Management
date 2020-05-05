@@ -52,9 +52,9 @@ public class choice extends AppCompatActivity implements AsyncResponse {
             }
             String st =sb.toString();
             String encode =Base64.encodeToString(st.getBytes(),Base64.DEFAULT);
-            http1.setText(encode);
             HashMap<String,String>postData=new HashMap<String, String>();
             postData.put("text",encode);
+            postData.put("image_name","kk.txt");
 
             PostResponseAsyncTask task =new PostResponseAsyncTask(choice.this, postData, new AsyncResponse() {
                 @Override
