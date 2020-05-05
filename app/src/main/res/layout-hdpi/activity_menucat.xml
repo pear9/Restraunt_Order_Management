@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Menu"
         android:textSize="24sp"
+        android:paddingLeft="40dp"
         android:textAlignment="center"
         android:layout_gravity="center"
         android:layout_weight="1"
