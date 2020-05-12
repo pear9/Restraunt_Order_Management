@@ -40,7 +40,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     int number1 =Integer.parseInt(test1);
     String file34="table"+number1+".txt";
     String file43 ="output.txt";
-    String file12=file34;
+    String file12="test.txt";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,12 +216,11 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
             // write line of table.txt to output.txt
             if(!flag){
                 String line5=line1.substring(line1.length()-3,line1.length());
-                if(!(line5.equals("000"))){
-                    fos2.write(line1.getBytes());
+                fos2.write(line1.getBytes());
                     fos2.write("\n".getBytes());
                     // flushing is important here
                     fos2.flush();
-                }}
+                }
 
 
             line1 = bir3.readLine();
@@ -235,7 +234,24 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
 
         fos2.close();
 
+        FileInputStream fis1 = null;
+        fis1 = openFileInput(file12);
+        InputStreamReader fir1 = new InputStreamReader(fis1);
+        BufferedReader bir1 = new BufferedReader(fir1);
 
+
+
+        fos1 = openFileOutput(file34, MODE_PRIVATE);
+        line1 = bir1.readLine();
+        while(line1 != null) {
+            String line5=line1.substring(line1.length()-3,line1.length());
+            if(!(line5.equals("000"))){
+                fos1.write(line1.getBytes());
+                fos1.write("\n".getBytes());
+
+            }
+            line1=bir1.readLine();
+        }
         Intent nav=new Intent(menucat.this,navigation_learning.class);
         startActivity(nav);
     }

@@ -39,7 +39,6 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
     private MainActivity chickentble=new MainActivity();
     private String str4=chickentble.getName();
     private int itemno=41;
-
     private String[]listchicken;
     private String itemwrite;
     private int itemcode;

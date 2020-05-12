@@ -97,7 +97,7 @@ private String message;
         HOTELAPP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newadmin = new Intent(MainActivity.this, admin.class);
+                Intent newadmin = new Intent(MainActivity.this,bluetooth.class);
                 startActivity(newadmin);
             }
         });

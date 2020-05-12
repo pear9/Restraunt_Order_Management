@@ -39,7 +39,6 @@
         <item>Lemon Sour</item>
 
 
-
     </string-array>
 
     <string-array name="tea">
@@ -58,7 +57,6 @@
         <item>Blueberry Lassi</item>
         <item>Kiwi Lassi</item>
         <item>Masala Lassi</item>
-
 
 
     </string-array>
@@ -130,8 +128,6 @@
         <item>Rice</item>
 
     </string-array>
-
-
 
 
 </resources>
