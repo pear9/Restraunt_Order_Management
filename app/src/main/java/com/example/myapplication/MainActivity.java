@@ -86,6 +86,7 @@ private String message;
                     }
                     Intent menu=new Intent(MainActivity.this,menucat.class);
                     menu.putExtra("tab1",name);
+                    table.setText("");
                             startActivity(menu);
                 }
                 else
