@@ -107,6 +107,13 @@ public class navigation_learning extends AppCompatActivity  {
         new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                if(response.equals("uploaded success")){
+                    Toast.makeText(navigation_learning.this,"Sent",Toast.LENGTH_SHORT).show();
+                    Intent last=new Intent(getApplicationContext(),MainActivity.class);
+
+                    startActivity(last);
+
+                }
 
             }
         }, new Response.ErrorListener() {
