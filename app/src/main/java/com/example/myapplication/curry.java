@@ -81,39 +81,11 @@ public class curry extends Fragment {
                         String child = expandableListDetail.get(
                                 expandableitems.get(groupPosition)).get(
                                 childPosition);
-                        if (position == 0) {
+
                             String s = child;
                             lassidialogue(s,childPosition,groupPosition);
-                        }
-                        if (position == 1) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 2) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 3) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 4) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 5) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 6) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        if (position == 7) {
-                            String s = child;
-                            lassidialogue(s, childPosition, groupPosition);
-                        }
-                        return false;
+
+                            return false;
 
                     }
 

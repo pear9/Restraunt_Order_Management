@@ -58,60 +58,6 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==1){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==2){
-
-            String s = listchicken[position];
-            lassidialogue(s, position);
-        }
-        if(position==3){
-
-            String s = listchicken[position];
-            lassidialogue(s, position);
-        }
-        if(position==4){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==5){
-            String s = listchicken[position];
-            lassidialogue(s, position);
-        }
-        if(position==6){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==7){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==8){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==9){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==10){
-
-            String s = listchicken[position];
-            lassidialogue(s,position);
-        }
-        if(position==11){
 
             String s = listchicken[position];
             lassidialogue(s,position);
@@ -119,7 +65,7 @@ public class Chicken extends Fragment implements AdapterView.OnItemClickListener
 
 
 
-    }
+
 
 
 

@@ -58,32 +58,8 @@ public class lassi extends Fragment implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
             String s = lassilist[position];
-            Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
-
             lassidialogue(s,position);
-        }
-        if(position==1){
-            String s = lassilist[position];
-            lassidialogue(s, position);
-        }
-        if(position==2){
-            String s = lassilist[position];
-            lassidialogue(s, position);
-        }
-        if(position==3){
-            String s = lassilist[position];
-            lassidialogue(s, position);
-        }
-        if(position==4){
-            String s = lassilist[position];
-            lassidialogue(s, position);
-        }
-        if(position==5){
-            String s = lassilist[position];
-            lassidialogue(s, position);
-        }
     }
 
 

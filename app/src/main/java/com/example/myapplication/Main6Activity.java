@@ -28,8 +28,8 @@ public class Main6Activity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
 
-        message = (EditText)findViewById(R.id.message);
-        printbtn = (Button)findViewById(R.id.printButton);
+        message = findViewById(R.id.message);
+        printbtn = findViewById(R.id.printButton);
 
         printbtn.setOnClickListener(new OnClickListener() {
 

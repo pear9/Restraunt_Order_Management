@@ -58,22 +58,10 @@ public class salad extends Fragment implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
+
             String nan = listsalad[position];
             lassidialogue(nan, position);
-        }
-        if(position==1){
-            String nan = listsalad[position];
-            lassidialogue(nan, position);
-        }
-        if(position==2){
-            String nan = listsalad[position];
-            lassidialogue(nan,position);
-        }
-        if(position==3){
-            String nan = listsalad[position];
-            lassidialogue(nan, position);
-        }
+
     }
 
     public void lassidialogue(final String s, final int position) {

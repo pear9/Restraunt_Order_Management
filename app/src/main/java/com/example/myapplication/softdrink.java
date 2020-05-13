@@ -57,38 +57,11 @@ public class softdrink extends Fragment implements AdapterView.OnItemClickListen
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
+
             FragmentActivity act=getActivity();
             String s = softdrink[position];
              lassidialogue(s, position);
-        }
-        if(position==1){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        }
-        if(position==2){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        }
-        if(position==3){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        }
-        if(position==4){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        }
-        if(position==5){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        } if(position==6){
-            String s = softdrink[position];
-             lassidialogue(s,position);
-        }
-        if(position==7){
-            String s = softdrink[position];
-             lassidialogue(s, position);
-        }
+
 
     }
 

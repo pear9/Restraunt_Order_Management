@@ -38,8 +38,8 @@ public class printer extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String action=intent.getAction();
-            if(action.equals(bluetoothAdapter.ACTION_STATE_CHANGED)){
-                final int state =intent.getIntExtra(bluetoothAdapter.EXTRA_STATE,bluetoothAdapter.ERROR);
+            if(action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)){
+                final int state =intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
                 switch (state){
                     case BluetoothAdapter.STATE_OFF:
                         toast("Turned Off");
@@ -131,7 +131,7 @@ public class printer extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     if(!bluetoothAdapter.isEnabled()){
-                        Intent intent=new Intent(bluetoothAdapter.ACTION_REQUEST_ENABLE);
+                        Intent intent=new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                         startActivity(intent);
                         IntentFilter onoff =new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
                         registerReceiver(obroadcastreceiver,onoff);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class datapump {
     public static HashMap<String, List<String>> getData() {
-        LinkedHashMap<String, List<String>> expandableListDetail = (LinkedHashMap<String, List<String>>) new LinkedHashMap<String, List<String>>();
+        LinkedHashMap<String, List<String>> expandableListDetail = new LinkedHashMap<String, List<String>>();
 
         List<String> Veg = new ArrayList<String>();
         Veg.add("Vegetable Curry Set");

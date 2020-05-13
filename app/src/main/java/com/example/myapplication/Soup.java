@@ -55,30 +55,9 @@ public class Soup extends Fragment implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
+
             String s = listsoup[position];
             lassidialogue(s,position);
-        }
-        if(position==1){
-            String s = listsoup[position];
-            lassidialogue(s, position);
-        }
-        if(position==2){
-            String s = listsoup[position];
-            lassidialogue(s, position);
-        }
-        if(position==3){
-            String s = listsoup[position];
-            lassidialogue(s, position);
-        }
-        if(position==4){
-            String s = listsoup[position];
-            lassidialogue(s, position);
-        }
-        if(position==5){
-            String s = listsoup[position];
-            lassidialogue(s, position);
-        }
 
     }
 

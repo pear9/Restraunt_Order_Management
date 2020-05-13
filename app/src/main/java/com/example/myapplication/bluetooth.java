@@ -32,6 +32,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
@@ -110,7 +111,7 @@ public class bluetooth extends AppCompatActivity  {
                 if (isChecked) {
                     if (!bluetoothAdapter.isEnabled()) {
                         toast("enabling bluetooth");
-                        Intent intent = new Intent(bluetoothAdapter.ACTION_REQUEST_ENABLE);
+                        Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                         startActivityForResult(intent, REQUEST_ENABLE_BT);
 
 
@@ -328,7 +329,7 @@ public class bluetooth extends AppCompatActivity  {
                                         );
 
                                         // specify US-ASCII encoding
-                                        final String data = new String(encodedBytes, "US-ASCII");
+                                        final String data = new String(encodedBytes, StandardCharsets.US_ASCII);
                                         readBufferPosition = 0;
 
                                         // tell the user data were sent to bluetooth printer device

@@ -33,7 +33,7 @@ public class Naan extends Fragment implements AdapterView.OnItemClickListener {
     ListView naan_list;
     String[] listnaan;
     MainActivity nantble=new MainActivity();
-    private String str4=nantble.getName();;
+    private String str4=nantble.getName();
     private String itemwrite="llloo";
     private int itemcode;
     private FileOutputStream[] fos1 = {null};
@@ -55,35 +55,9 @@ public class Naan extends Fragment implements AdapterView.OnItemClickListener {
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
+
             String nan = listnaan[position];
              lassidialogue(nan,position);
-        }
-        if(position==1){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-        if(position==2){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-        if(position==3){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-        if(position==4){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-        if(position==5){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-        if(position==6){
-            String nan = listnaan[position];
-            lassidialogue(nan, position);
-        }
-
     }
 
 

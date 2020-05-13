@@ -215,7 +215,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
             // if flag = false
             // write line of table.txt to output.txt
             if(!flag){
-                String line5=line1.substring(line1.length()-3,line1.length());
+                String line5=line1.substring(line1.length()-3);
                 fos2.write(line1.getBytes());
                     fos2.write("\n".getBytes());
                     // flushing is important here
@@ -244,7 +244,7 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
         fos1 = openFileOutput(file34, MODE_PRIVATE);
         line1 = bir1.readLine();
         while(line1 != null) {
-            String line5=line1.substring(line1.length()-3,line1.length());
+            String line5=line1.substring(line1.length()-3);
             if(!(line5.equals("000"))){
                 fos1.write(line1.getBytes());
                 fos1.write("\n".getBytes());

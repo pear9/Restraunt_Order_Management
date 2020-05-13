@@ -21,7 +21,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Objects;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 
 /**
@@ -34,6 +39,12 @@ public class harddrinks extends Fragment implements AdapterView.OnItemClickListe
     }
         private String[] hdlist;
         private ListView Alcohol;
+    private MainActivity hdtable=new MainActivity();
+    private int itemno=78;
+    private String str4=hdtable.getName();
+    private String itemwrite;
+    private int itemcode;
+
 
 
     @Override
@@ -53,61 +64,13 @@ public class harddrinks extends Fragment implements AdapterView.OnItemClickListe
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        if(position==0) {
-            String s = hdlist[position];
-                lassidialogue(s);
-        }
-        if(position==1){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==2){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==3){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==4){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==5){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==6){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==7){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==8){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==9){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==10){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-        if(position==11){
-            String s = hdlist[position];
-            lassidialogue(s);
-        }
-
-
+        String s = hdlist[position];
+        lassidialogue(s,position);
     }
 
 
 
-    private void lassidialogue(String s) {
+    private void lassidialogue(final String s, int position) {
         final AlertDialog.Builder alert =new AlertDialog.Builder(getActivity());
         View mview =getLayoutInflater().inflate(R.layout.alertdialogue,null);
         TextView item_name=mview.findViewById(R.id.alertTitle);
@@ -117,8 +80,10 @@ public class harddrinks extends Fragment implements AdapterView.OnItemClickListe
         final EditText text=mview.findViewById(R.id.quantity);
         item_name.setText(s);
         alert.setView(mview);
+        itemcode=position+itemno;
         final AlertDialog alertDialog =alert.create();
         alertDialog.setCanceledOnTouchOutside(false);
+
 
         okbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +94,39 @@ public class harddrinks extends Fragment implements AdapterView.OnItemClickListe
 
                 }else {
                     int numberlassi = Integer.parseInt(s1);
+                    int divide=numberlassi/10;
+                    FileOutputStream[] fos = {null};
+                    String file1="table"+str4;
+                    String file = file1+".txt";
+
+                    if (divide >=10){
+                        itemwrite = str4 + ","+itemcode+ "," + s + "," + numberlassi + "\n";}
+                    else if(divide>0 & divide<10){
+                        itemwrite = str4 + ","+itemcode+"," + s + "," +"0"+ numberlassi + "\n";
+                    }
+                    else{
+                        itemwrite = str4 + ","+itemcode+"," + s + "," +"00"+ numberlassi + "\n";
+                    }
+
+                    try {
+                        fos[0] =getActivity().openFileOutput(file, Context.MODE_APPEND);
+                        fos[0].write(itemwrite.getBytes());
+                        Toast.makeText(getActivity(),"saved "+getActivity().getFilesDir(), LENGTH_SHORT).show();
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    finally {
+                        if(fos[0] != null){
+                            try {
+                                fos[0].close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
                     alertDialog.dismiss();
                 }
 
