@@ -108,7 +108,7 @@ public class navigation_learning extends AppCompatActivity  {
             @Override
             public void onResponse(String response) {
                 if(response.equals("uploaded success")){
-                    Toast.makeText(navigation_learning.this,"Sent",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(navigation_learning.this,"Order sent",Toast.LENGTH_SHORT).show();
                     Intent last=new Intent(getApplicationContext(),MainActivity.class);
 
                     startActivity(last);
