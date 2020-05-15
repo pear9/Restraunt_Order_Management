@@ -41,6 +41,8 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
     String file34="table"+number1+".txt";
     String file43 ="output.txt";
     String file12="test.txt";
+    String printfile="printfile"+number1+".txt";
+    FileOutputStream fos4=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -243,11 +245,19 @@ public class menucat extends AppCompatActivity implements AdapterView.OnItemClic
 
         fos1 = openFileOutput(file34, MODE_PRIVATE);
         line1 = bir1.readLine();
+        fos4= openFileOutput(printfile,MODE_PRIVATE);
         while(line1 != null) {
             String line5=line1.substring(line1.length()-3);
             if(!(line5.equals("000"))){
                 fos1.write(line1.getBytes());
                 fos1.write("\n".getBytes());
+                String[] fprint=line1.split(",",3);
+                String fprint2=fprint[2];
+//                String[] fprint3=fprint2.split(",",2);
+//                String fprint4=fprint3[1];
+                fos4.write(fprint2.getBytes());
+                fos4.write("\n".getBytes());
+
 
             }
             line1=bir1.readLine();

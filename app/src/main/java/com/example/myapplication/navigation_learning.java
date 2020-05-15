@@ -47,6 +47,8 @@ public class navigation_learning extends AppCompatActivity  {
     MainActivity test =new MainActivity();
     String test1=test.getName();
     String file_s="table"+test1+".txt";
+    String servername="server.txt";
+    String servadd = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,14 @@ public class navigation_learning extends AppCompatActivity  {
 
 
         try{
+            ////---------------Reading server file-----------------///////////
+            FileInputStream fis01 = null;
+            fis01 = openFileInput(servername);
+            InputStreamReader fir01 = new InputStreamReader(fis01);
+            BufferedReader bir01 = new BufferedReader(fir01);
+            servadd = bir01.readLine();
+            /////////----------------------------------------------/////////////////
+
             FileInputStream fis =null;
             fis =openFileInput(file_s);
             InputStreamReader isr =new InputStreamReader(fis);
@@ -82,10 +92,10 @@ public class navigation_learning extends AppCompatActivity  {
         public void load(View v) {
 
 
-            new Encode_image().execute();
+            new Encode_file().execute();
         }
 
-    private class Encode_image extends AsyncTask<Void,Void,Void> {
+    private class Encode_file extends AsyncTask<Void,Void,Void> {
 
 
         @Override
@@ -103,7 +113,7 @@ public class navigation_learning extends AppCompatActivity  {
 
     private void makeRequest() {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
-        StringRequest request =new StringRequest(Method.POST,"http://192.168.1.8/save3.php",
+        StringRequest request =new StringRequest(Method.POST,servadd,
         new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

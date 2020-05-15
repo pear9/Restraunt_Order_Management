@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,16 @@ private String message;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences pref=getSharedPreferences("pref",MODE_PRIVATE);
+        boolean first =pref.getBoolean("first",true);
+        if (first){
+            Intent s2=new Intent(getApplicationContext(),Servername.class);
+            SharedPreferences.Editor editor =pref.edit();
+            editor.putBoolean("first",false);
+            editor.apply();
+            startActivity(s2);
+        }
+
 //---------linking buttons from xml to new variable----
         ImageView table1= findViewById(R.id.imageView3);
        table= findViewById(R.id.editText);
@@ -98,7 +109,7 @@ private String message;
         HOTELAPP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newadmin = new Intent(MainActivity.this,bluetooth.class);
+                Intent newadmin = new Intent(MainActivity.this,settings.class);
                 startActivity(newadmin);
             }
         });

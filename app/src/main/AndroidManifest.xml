@@ -13,17 +13,18 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-
-        android:networkSecurityConfig="@xml/network2"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Hotel"
+        android:networkSecurityConfig="@xml/network2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".BTDeviceList"/>
-        <activity android:name=".Main6Activity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Servername"/>
+        <activity android:name=".settings"></activity>
+        <activity android:name=".BTDeviceList" />
+
         <activity android:name=".printer" />
         <activity android:name=".bluetooth" />
         <activity android:name=".Main5Activity" />

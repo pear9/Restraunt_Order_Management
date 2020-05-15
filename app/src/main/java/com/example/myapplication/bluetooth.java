@@ -27,10 +27,14 @@ import android.widget.Toast;
 
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -48,13 +52,15 @@ public class bluetooth extends AppCompatActivity  {
     TextView btext;
     ArrayAdapter<String> arrayAdapter1, arrayAdapter2;
     ArrayList<String> scannedarray, pairedarray;
-
+//    MainActivity btest =new MainActivity();
+//    String number1=btest.getName();
     ParcelUuid[] uuidno;
     BluetoothDevice[] btdevice=new BluetoothDevice[56];
     Button scan;
     byte[] readBuffer;
     int readBufferPosition;
     volatile boolean stopWorker;
+//    String printfile="printfile"+number1+".txt";
     OutputStream mmOutputStream;
     InputStream mmInputStream;
     Thread workerThread;
@@ -303,6 +309,7 @@ public class bluetooth extends AppCompatActivity  {
             readBuffer = new byte[1024];
 
             workerThread = new Thread(new Runnable() {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
                 public void run() {
 
                     while (!Thread.currentThread().isInterrupted() && !stopWorker) {
@@ -335,7 +342,7 @@ public class bluetooth extends AppCompatActivity  {
                                         // tell the user data were sent to bluetooth printer device
                                         handler.post(new Runnable() {
                                             public void run() {
-                                               toast("data is sent");
+                                               toast("data is  printing..");
                                             }
                                         });
 
@@ -363,9 +370,18 @@ public class bluetooth extends AppCompatActivity  {
 
     void sendData() throws IOException {
         try {
-
+//            FileInputStream fis =null;
+//            fis =openFileInput(printfile);
+//            InputStreamReader isr1 =new InputStreamReader(fis);
+//            BufferedReader br1 =new BufferedReader(isr1);
+//            StringBuilder sb1= new StringBuilder();
+//            String text;
+//            while((text=br1.readLine())!=null){
+//                sb1.append(text).append("\n");
+//            }
+//            String str =sb1.toString();
             // the text typed by the user
-            String msg = "Hello world this is test"+"\n"+"Hope all is good";
+           String msg = "Hello world this is test"+"\n"+"Hope all is good";
 
 
             mmOutputStream.write(msg.getBytes());
