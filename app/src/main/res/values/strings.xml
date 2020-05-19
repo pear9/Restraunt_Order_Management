@@ -15,13 +15,13 @@
         <item>Table</item>
         <item>Take-out</item>
     </string-array>
-    <string-array name="menu2">
-        <item>Special</item>
-        <item>Campaing</item>
-        <item>New Item 1</item>
-        <item>New Item 2</item>
-        <item>New Item 3</item>
-    </string-array>
+<!--    <string-array name="menu2">-->
+<!--        <item>Special</item>-->
+<!--        <item>Campaing</item>-->
+<!--        <item>New Item 1</item>-->
+<!--        <item>New Item 2</item>-->
+<!--        <item>New Item 3</item>-->
+<!--    </string-array>-->
 
     <string-array name="menu">
         <item>DRINKS</item>
@@ -146,6 +146,7 @@
         <item>Campaign</item>
         <item>New Item 1</item>
         <item>New Item 2</item>
+        <item>New Item 3</item>
 
     </string-array>
 
