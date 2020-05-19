@@ -19,7 +19,7 @@ public class Main3Activity extends AppCompatActivity {
     ImageView introim;
     TextView introtx;
 
-    static int time=3000;
+    static int time=2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

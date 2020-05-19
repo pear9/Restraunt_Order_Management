@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class settings extends AppCompatActivity {
-Button sbluetooth,server;
+Button sbluetooth,server,admingo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +29,6 @@ Button sbluetooth,server;
                 startActivity(i);
             }
         });
+
     }
 }

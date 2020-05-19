@@ -18,72 +18,73 @@
         android:textAlignment="center"
         android:textColor="#47BC13"
         android:textColorLink="#302445"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="normal|bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="370dp"
-        android:layout_height="498dp"
-        android:layout_marginBottom="164dp"
+        android:layout_width="0dp"
+        android:layout_height="295dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="63dp"
         android:alpha=".4"
         android:foregroundGravity="center"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toBottomOf="@+id/HOTELAPP" />
 
-
-    <Button
-        android:id="@+id/done"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/button"
-        android:text="done"
-        android:textSize="26sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.595" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="TABLE NO."
-        android:inputType="number"
-        android:maxLength="2"
-        android:text="1"
-        android:textColor="#0C0C0C"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/done"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.606" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:text="ENTER"
-        android:textColor="#020202"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toEndOf="@+id/guideline6"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.62" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/s2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            style="@style/spinner"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="108dp"
+            android:hint="TABLE NO."
+            android:inputType="number"
+            android:maxLength="2"
+            android:text="2"
+            android:textSize="18sp"
+            android:layout_weight="2"/>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="77dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="108dp"
+            android:background="@drawable/button"
+            android:text="done"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -110,20 +111,13 @@
         app:layout_constraintGuide_percent="0.05" />
 
 
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.95" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent=".5"
+        app:layout_constraintGuide_percent="0.95"
         app:layout_constraintGuide_begin="20dp" />
 
 

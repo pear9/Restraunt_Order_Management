@@ -42,10 +42,11 @@ import java.util.Set;
 import java.util.UUID;
 
 public class bluetooth extends AppCompatActivity  {
+    public static final int REQUEST_CONNECT_BT = 23;
     private final static int REQUEST_ENABLE_BT = 0;
     private final static int REQUEST_DISCOVER_BT = 1;
     BluetoothAdapter bluetoothAdapter;
-    BluetoothSocket socket;
+    private static BluetoothSocket socket;
     ImageView bimage;
     ListView available, paired;
     Switch bdiscoverable, bon;
@@ -55,7 +56,7 @@ public class bluetooth extends AppCompatActivity  {
 //    MainActivity btest =new MainActivity();
 //    String number1=btest.getName();
     ParcelUuid[] uuidno;
-    BluetoothDevice[] btdevice=new BluetoothDevice[56];
+    private static BluetoothDevice[] btdevice=new BluetoothDevice[56];
     Button scan;
     byte[] readBuffer;
     int readBufferPosition;
@@ -70,7 +71,7 @@ public class bluetooth extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth);
       scan = findViewById(R.id.scan);
-//        available = findViewById(R.id.available);
+  //      available = findViewById(R.id.available);
         paired = findViewById(R.id.paired);
         bimage = findViewById(R.id.bimage);
         bon = findViewById(R.id.switch1);
@@ -221,7 +222,11 @@ public class bluetooth extends AppCompatActivity  {
         paired.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                connect(position);
+                try {
+                    conect(position);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -250,9 +255,10 @@ public class bluetooth extends AppCompatActivity  {
         }}
 
     }
-    private void toast (String t){
-        Toast.makeText(this, t, Toast.LENGTH_SHORT).show();
+    private void toast(String t){
+        Toast.makeText(bluetooth.this, t, Toast.LENGTH_SHORT).show();
     }
+
 
 
     @Override
@@ -276,27 +282,34 @@ public class bluetooth extends AppCompatActivity  {
             }
             super.onActivityResult(requestCode, resultCode, data);
         }
-        public void connect(int position)  {
-            UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
+        public void conect(int position) throws IOException {
+            UUID uuid;
+//             = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb"
 
             BluetoothDevice device;
 
             device=btdevice[position];
             try {
+                boolean gotuuid = device.fetchUuidsWithSdp();
+               uuid = device.getUuids()[0].getUuid();
                 socket=device.createRfcommSocketToServiceRecord(uuid);
                 socket.connect();
-                mmOutputStream = socket.getOutputStream();
-                mmInputStream = socket.getInputStream();
-                beginListenForData();
-                sendData();
-                closeBT();
+//                mmOutputStream = socket.getOutputStream();
+//                mmInputStream = socket.getInputStream();
+//                beginListenForData();
+//                sendData();
+
 
 
             } catch (IOException e) {
-                toast("cannot connect");
+                Toast.makeText(bluetooth.this, "cannot connect", Toast.LENGTH_SHORT).show();
+                closeBT();
                 e.printStackTrace();
             }
         }
+    public static BluetoothSocket getSocket() {
+        return socket;
+    }
     void beginListenForData() {
         try {
             final Handler handler = new Handler();
@@ -366,6 +379,31 @@ public class bluetooth extends AppCompatActivity  {
             e.printStackTrace();
         }
     }
+    private void flushData() {
+        try {
+            if (socket != null) {
+                socket.close();
+                socket = null;
+            }
+
+
+
+            if (btdevice != null) {
+                btdevice = null;
+            }
+
+            if (pairedarray != null) {
+                pairedarray.clear();
+                pairedarray = null;
+            }
+
+            //finalize();
+        } catch (Exception ex) {
+            Log.e("TAG1", ex.getMessage());
+        }
+
+    }
+
 
 
     void sendData() throws IOException {
@@ -393,11 +431,9 @@ public class bluetooth extends AppCompatActivity  {
             e.printStackTrace();
         }
     }
-    void closeBT() throws IOException {
+    static void closeBT() throws IOException {
         try {
-            stopWorker = true;
-            mmOutputStream.close();
-            mmInputStream.close();
+
             socket.close();
 
         } catch (Exception e) {

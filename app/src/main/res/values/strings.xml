@@ -11,6 +11,17 @@
     <string name="lassi">LASSI</string>
     <string name="menu">Menu</string>
 
+    <string-array name="menu1">
+        <item>Table</item>
+        <item>Take-out</item>
+    </string-array>
+    <string-array name="menu2">
+        <item>Special</item>
+        <item>Campaing</item>
+        <item>New Item 1</item>
+        <item>New Item 2</item>
+        <item>New Item 3</item>
+    </string-array>
 
     <string-array name="menu">
         <item>DRINKS</item>
@@ -21,6 +32,8 @@
         <item>PIZZA</item>
         <item>NAAN</item>
         <item>RICE SET</item>
+        <item>Others</item>
+
 
     </string-array>
 
@@ -128,6 +141,14 @@
         <item>Rice</item>
 
     </string-array>
+    <string-array name="Extra">
+        <item>Todays Special</item>
+        <item>Campaign</item>
+        <item>New Item 1</item>
+        <item>New Item 2</item>
+
+    </string-array>
+
 
 
 </resources>

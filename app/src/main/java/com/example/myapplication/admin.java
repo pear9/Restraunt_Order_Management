@@ -49,8 +49,8 @@ public class admin extends AppCompatActivity {
 
 
 
-                    if("anis".equals(name) & ("985509".equals(passkey))){
-                        Intent admin_add = new Intent(admin.this,navigation_learning.class);
+                    if("Admin".equals(name) & ("Admin".equals(passkey))){
+                        Intent admin_add = new Intent(admin.this,adminAdd.class);
                         Toast.makeText(admin.this,"o yeah",Toast.LENGTH_SHORT).show();
                         startActivity(admin_add);
                     }

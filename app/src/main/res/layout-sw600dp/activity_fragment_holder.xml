@@ -10,15 +10,16 @@
         android:id="@+id/actionMenuView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentmenu"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorPrimary"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.appcompat.widget.ActionMenuView>
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="itemname"
@@ -26,18 +27,9 @@
         android:textAllCaps="true"
         android:textColor="#000"
         android:textSize="45sp"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentmenu"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/fragmentmenu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/actionMenuView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

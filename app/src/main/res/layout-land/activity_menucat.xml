@@ -31,35 +31,34 @@
                 android:layout_weight="1"
                 ></TextView>
 
-            <Button
+            <ImageView
                 android:id="@+id/Done"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/button"
+                android:layout_weight="3"
+                android:padding="5dp"
                 android:onClick="sort"
-                android:text="Done"
-                android:textSize="8sp" />
+                android:src="@drawable/send" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/order"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:text="Order"
-            android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"/>
     </LinearLayout>
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/linear"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="46dp">
+        tools:layout_editor_absoluteY="46dp"
+        android:layout_below="@id/linear">
 
     </ListView>
 </RelativeLayout>
