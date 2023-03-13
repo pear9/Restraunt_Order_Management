@@ -2,19 +2,19 @@
 This is a Java-based application for restaurant order management system. The application provides a simple and intuitive interface for restaurant staff to manage orders, update menu items, and track sales.
 
 #Table of Contents
-<h1>Installation</h1>
-<h1>Usage</h1>
-<h1>Features</h1>
-<h1>Contributing</h1>
-<h1>License</h1>
+<h2>Installation</h1>
+<h2>Usage</h1>
+<h2>Features</h1>
+<h2>Contributing</h1>
+<h2>License</h1>
 
 <h1>Installation</h1>
 To install and run the application, you will need to have Java Development Kit (JDK) version 8 or later installed on your computer.
 
-Clone the repository to your local machine:
-git clone https://github.com/your-username/restaurant-order-management.git
+Clone the repository to your local machine
+git clone https://github.com/pear9/Restraunt_Order_Management.git
 
-Open the project in your preferred IDE (e.g. Eclipse, IntelliJ, NetBeans)
+Open the project in your preferred IDE (e.g. Eclipse, IntelliJ, NetBeans)<br>
 Build and run the project using your IDE's built-in tools or command line tools.
 
 <h1>Usage</h1>
