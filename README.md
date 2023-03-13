@@ -2,11 +2,11 @@
 This is a Java-based application for restaurant order management system. The application provides a simple and intuitive interface for restaurant staff to manage orders, update menu items, and track sales.
 
 # Table of Contents
-Installation
-Usage
-Features
-Contributing</h2>
-License
+Installation<br>
+Usage<br>
+Features<br>
+Contributing<br>
+License<br>
 <br>
 <br>
 <h2>Installation</h2>
