@@ -2,12 +2,13 @@
 This is a Java-based application for restaurant order management system. The application provides a simple and intuitive interface for restaurant staff to manage orders, update menu items, and track sales.
 
 # Table of Contents
-<h2>Installation</h2>
-<h2>Usage</h2>
-<h2>Features</h2>
-<h2>Contributing</h2>
-<h2>License</h2>
-
+Installation
+Usage
+Features
+Contributing</h2>
+License
+<br>
+<br>
 <h2>Installation</h2>
 To install and run the application, you will need to have Java Development Kit (JDK) version 8 or later installed on your computer.
 
